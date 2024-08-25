@@ -1,6 +1,5 @@
 #importa librerias
 import pandas as pd
-import aspose.pdf as ap #pendiente convertirlo a pdf 
 from datetime import datetime
 from docxtpl import DocxTemplate
 
