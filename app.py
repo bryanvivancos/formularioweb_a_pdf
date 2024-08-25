@@ -29,16 +29,11 @@ def guardar_datos():
     print(asunto)
     print(comentarios)
     
-    with open(f'memo.txt','a') as archivo:
-        #diccionarro = {'para':para, 'de':de,'copia':copia,'fecha':fecha,'asunto':asunto,'comentarios':comentarios}
-        #archivo.write(diccionario)
-        archivo.write(f'{para},{de},{copia},{fecha},{asunto},{comentarios}\n')
-    
+    with open(f'prueba.csv','a') as archivo:
+        
+        archivo.write(f'{para};{de};{copia};{fecha};{asunto};{comentarios}\n')
+        
     return redirect(url_for('index'))
-
-    #asignacion de las variables al documento y guarda en pdf
-    
-    #doc.save(f'prueba.docx')
 
 
 if (__name__ == '__main__'):
