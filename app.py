@@ -40,11 +40,11 @@ def guardar_datos():
     
     print(columns)
     
-    with open(f'prueba.csv','a') as archivo:
+    with open(f'bd.csv','a') as archivo:
         
         archivo.write(f'{para};{de};{copia};{fecha};{asunto};{comentarios}\n')
         
-    df = pd.read_csv('prueba.csv',names=columns, delimiter=";")
+    df = pd.read_csv('bd.csv',names=columns, delimiter=";")
     print(df)
     
     for indice,fila in df.iterrows():
@@ -59,7 +59,7 @@ def guardar_datos():
 ####asignacion de las variables al documento y guarda en .docx
 
     doc.render(contenido)
-    doc.save(f'memo_{fila["para"]}.docx')
+    doc.save(f'memos/memo_{fila["para"]}.docx')
         
     return redirect(url_for('index'))
 
