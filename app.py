@@ -3,14 +3,14 @@ from datetime import datetime
 import pandas as pd
 from docxtpl import DocxTemplate
 
-####documento de memo y header
+#### documento de memo y header
 
 doc = DocxTemplate("memorando.docx")
 columns=["para","de","copia","fecha","asunto","comentarios"]
 
 ####
 
-####inicio pagina con Flask
+#### inicio pagina con Flask
 
 app = Flask(__name__)
 
@@ -56,13 +56,17 @@ def guardar_datos():
             "asunto":fila["asunto"],
             "comentarios":fila["comentarios"]}
 
-####asignacion de las variables al documento y guarda en .docx
+#### asignacion de las variables al documento y guarda en .docx
 
     doc.render(contenido)
     doc.save(f'memos/memo_{fila["para"]}.docx')
+
+#####
+    
+##### regresa a pagina principal
         
     return redirect(url_for('index'))
-
+    
 #####
 
 if (__name__ == '__main__'):
